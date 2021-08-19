@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package domain.events.lists.v1;
+
+option go_package = "github.com/janartodesk/domain-design/lists";
+
+message ListDeleted {
+  bytes ListPK = 1;
+}
+
+message SubscriberForgotten {
+  bytes SubscriberPK = 1;
+  bytes OrganizationPK = 2;
+}
+
+message SubscriberOptedIn {
+  bytes SubscriberPK = 1;
+  bytes ListPK = 2;
+}
+
+message SubscriberOptedOut {
+  bytes SubscriberPK = 1;
+  bytes ListPK = 2;
+}
